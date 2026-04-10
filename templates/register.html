@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Добро пожаловать в гости у точке!</h1>
+        <p class="subtitle">Чтобы мы смогли вам помочь, зарегистрируйтесь пожалуйста!</p>
+        
+        {% if error %}
+            <div class="error">{{ error }}</div>
+        {% endif %}
+        
+        <form method="POST">
+            <input type="text" name="username" placeholder="Никнейм" required>
+            <input type="email" name="email" placeholder="Почта" required>
+            <input type="password" name="password" placeholder="Пароль" required>
+            <input type="password" name="confirm_password" placeholder="Повторите пароль" required>
+            <button type="submit">Зарегистрироваться</button>
+        </form>
+        
+        <a href="{{ url_for('login') }}" class="link">Уже есть аккаунт? Войти</a>
+    </div>
+</body>
+</html>

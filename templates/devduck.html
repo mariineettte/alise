@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container dashboard">
+        <div class="duck-icon">🦆</div>
+        <h2>Привет, {{ username }}!</h2>
+        <p class="message">Сайт начнет функционировать в скором времени, ожидайте обновлений.</p>
+        <a href="{{ url_for('logout') }}" class="logout">Выйти</a>
+    </div>
+</body>
+</html>
